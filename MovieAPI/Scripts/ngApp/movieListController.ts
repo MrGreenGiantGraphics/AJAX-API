@@ -6,21 +6,18 @@
 
         public movies: MovieApp.Models.Movie[];
 
-        constructor($http, $location) {
+        constructor($location, MovieService: MovieApp.Services.MovieService) {
 
             this.$location = $location;
-
-            $http.get('/api/movies')
+            
+            MovieService.list()
                 .then((response) => {
-
-                    this.movies = response.data.map(function (ele) {
-                        return MovieApp.Models.Movie.parse(ele);
-                    });
+                    this.movies = MovieService.mapToList(response.data);
                 });
         }
 
-        public goTo(movieTitle: string) {
-            this.$location.path(`/movie/${movieTitle}`);
+        public goTo(id: number) {
+            this.$location.path(`/movie/${id}`);
         }
     }
 }

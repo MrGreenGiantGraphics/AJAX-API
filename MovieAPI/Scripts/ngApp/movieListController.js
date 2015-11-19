@@ -3,18 +3,16 @@ var MovieApp;
     var Controllers;
     (function (Controllers) {
         var MovieListController = (function () {
-            function MovieListController($http, $location) {
+            function MovieListController($location, MovieService) {
                 var _this = this;
                 this.$location = $location;
-                $http.get('/api/movies')
+                MovieService.list()
                     .then(function (response) {
-                    _this.movies = response.data.map(function (ele) {
-                        return MovieApp.Models.Movie.parse(ele);
-                    });
+                    _this.movies = MovieService.mapToList(response.data);
                 });
             }
-            MovieListController.prototype.goTo = function (movieTitle) {
-                this.$location.path("/movie/" + movieTitle);
+            MovieListController.prototype.goTo = function (id) {
+                this.$location.path("/movie/" + id);
             };
             return MovieListController;
         })();

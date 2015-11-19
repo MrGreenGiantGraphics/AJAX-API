@@ -238,6 +238,9 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
+    <Content Include="ngViews\add.html" />
+    <Content Include="ngViews\details.html" />
+    <Content Include="ngViews\home.html" />
     <Content Include="Scripts\angular-mocks.js" />
     <Content Include="Scripts\angular-route.js" />
     <Content Include="Scripts\angular-route.min.js" />
@@ -275,8 +278,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="ngViews\" />
-    <Folder Include="Scripts\ngApp\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -294,6 +295,12 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <TypeScriptCompile Include="Scripts\ngApp\app.ts" />
+    <TypeScriptCompile Include="Scripts\ngApp\movie.ts" />
+    <TypeScriptCompile Include="Scripts\ngApp\movieAddController.ts" />
+    <TypeScriptCompile Include="Scripts\ngApp\movieDetailsController.ts" />
+    <TypeScriptCompile Include="Scripts\ngApp\movieListController.ts" />
+    <TypeScriptCompile Include="Scripts\ngApp\person.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-animate.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-cookies.d.ts" />
     <TypeScriptCompile Include="Scripts\typings\angularjs\angular-mocks.d.ts" />

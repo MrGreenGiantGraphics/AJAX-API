@@ -8,10 +8,20 @@ var MovieApp;
             controller: MovieApp.Controllers.MovieListController,
             controllerAs: 'mlc'
         })
-            .when('/movie/:title', {
+            .when('/movie/create', {
+            templateUrl: '/ngViews/add.html',
+            controller: MovieApp.Controllers.MovieAddController,
+            controllerAs: 'mac'
+        })
+            .when('/movie/:id', {
             templateUrl: '/ngViews/details.html',
             controller: MovieApp.Controllers.MovieDetailsController,
             controllerAs: 'mdc'
         });
+    });
+    angular.module('MovieApp')
+        .constant('apiUrls', {
+        movies: '/api/movies',
+        actors: '/api/actors'
     });
 })(MovieApp || (MovieApp = {}));

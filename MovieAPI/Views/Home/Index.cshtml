@@ -11,12 +11,22 @@
     <script src="~/Scripts/angular-route.js"></script>
     <script src="~/Scripts/ngApp/app.js"></script>
     <script src="~/Scripts/ngApp/movie.js"></script>
+    <script src="~/Scripts/ngApp/person.js"></script>
     <script src="~/Scripts/ngApp/movieListController.js"></script>
+    <script src="~/Scripts/ngApp/movieAddController.js"></script>
+    <script src="~/Scripts/ngApp/movieDetailsController.js"></script>
 </head>
 <body>
 
     <div class="container">
-        <ng-view></ng-view>
+        <div class="row">
+            <a href="#/" class="btn btn-link">Home</a>
+            <a href="#/movie/create" class="btn btn-link">Add Movie</a>
+        </div>
+
+        <div class="row">
+            <ng-view></ng-view>
+        </div>
     </div>
 
 </body>
