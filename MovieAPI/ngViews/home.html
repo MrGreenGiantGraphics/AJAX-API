@@ -1,0 +1,10 @@
+﻿<div class="row">
+    <div class="col-md-4" ng-repeat="movie in mlc.movies" style="border:1px solid black" ng-click="mlc.goTo(movie.title)">
+        <div>
+            {{movie.title}}
+        </div>
+        <div>
+            {{movie.releaseDate|date}}
+        </div>
+    </div>
+</div> 
